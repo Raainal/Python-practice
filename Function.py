@@ -27,4 +27,12 @@ def info(fname,lname):
 def add(n1,n2):
     return n1+n2
 res=add(2,3)
+#print(res)
+
+def math(n1,n2):
+    r=n1+n2
+    m=n1*n2
+    n=n1/n2
+    return r,m,n
+res=math(2,3)
 print(res)
