@@ -41,4 +41,8 @@ def func(name):
     for i in name:
         print(i)
 name_of=["amal","dharshu","shib","bitch"]
-print(func(name_of))
+#print(func(name_of))
+
+def name(*name):
+    #print(name)
+name("ashish","prashant","tushar",1001)
