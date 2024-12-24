@@ -45,4 +45,4 @@ name_of=["amal","dharshu","shib","bitch"]
 
 def name(*name):
     #print(name)
-name("ashish","prashant","tushar",1001)
+#name("ashish","prashant","tushar",1001)
