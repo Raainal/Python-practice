@@ -35,4 +35,10 @@ def math(n1,n2):
     n=n1/n2
     return r,m,n
 res=math(2,3)
-print(res)
+#print(res)
+
+def func(name):
+    for i in name:
+        print(i)
+name_of=["amal","dharshu","shib","bitch"]
+print(func(name_of))
