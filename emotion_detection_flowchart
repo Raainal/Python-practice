@@ -1,0 +1,62 @@
+digraph {
+	node [fillcolor=lightblue fontsize=10 shape=rectangle style="rounded,filled"]
+	Start [label=Start fillcolor=lightgreen shape=ellipse]
+	LoadModel [label="Load pre-trained model for
+emotion detection"]
+	LoadHaar [label="Load Haar cascade classifier
+for face detection"]
+	CreateWindow [label="Create main application window"]
+	LoadImage [label="Load and display background image"]
+	EnsureCamera [label="Ensure camera is opened"]
+	CaptureFrame [label="Capture frame from camera"]
+	Grayscale [label="Convert frame to grayscale"]
+	DetectFaces [label="Detect faces using Haar cascade"]
+	DrawRect [label="Draw rectangles around faces"]
+	ConvertRGB [label="Convert frame to RGB and
+PIL image"]
+	DisplayFrame [label="Display updated frame on label"]
+	ScheduleUpdate [label="Schedule next frame update"]
+	DetectEmotions [label="Detect emotions (Button Press)"]
+	OpenWebcam [label="Open webcam and capture frames"]
+	ProcessFrame [label="For each frame, process and
+detect faces"]
+	CropFace [label="Crop and preprocess face region"]
+	PredictEmotion [label="Predict emotion using model"]
+	DisplayEmotion [label="Display emotion label"]
+	ExitLoop [label="Exit loop on 'q' key press"]
+	ReleaseCamera [label="Release webcam and close windows"]
+	HandleButtons [label="Handle button interactions"]
+	ConfigureUI [label="Configure UI elements"]
+	RunLoop [label="Run main application loop"]
+	End [label=End fillcolor=lightgreen shape=ellipse]
+	Decision1 [label="Is camera opened?" fillcolor=lightyellow shape=diamond]
+	Decision2 [label="Any faces detected?" fillcolor=lightyellow shape=diamond]
+	Start -> LoadModel
+	LoadModel -> LoadHaar
+	LoadHaar -> CreateWindow
+	CreateWindow -> LoadImage
+	LoadImage -> EnsureCamera
+	EnsureCamera -> Decision1
+	Decision1 -> CaptureFrame [label=Yes]
+	Decision1 -> End [label=No]
+	CaptureFrame -> Grayscale
+	Grayscale -> DetectFaces
+	DetectFaces -> Decision2
+	Decision2 -> DrawRect [label=Yes]
+	Decision2 -> ScheduleUpdate [label=No]
+	DrawRect -> ConvertRGB
+	ConvertRGB -> DisplayFrame
+	DisplayFrame -> ScheduleUpdate
+	ScheduleUpdate -> DetectEmotions
+	DetectEmotions -> OpenWebcam
+	OpenWebcam -> ProcessFrame
+	ProcessFrame -> CropFace
+	CropFace -> PredictEmotion
+	PredictEmotion -> DisplayEmotion
+	DisplayEmotion -> ExitLoop
+	ExitLoop -> ReleaseCamera
+	ReleaseCamera -> HandleButtons
+	HandleButtons -> ConfigureUI
+	ConfigureUI -> RunLoop
+	RunLoop -> End
+}

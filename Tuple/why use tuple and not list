@@ -1,0 +1,3 @@
+tuple when ur requirement is fixed and wont be changed in the future
+
+list when the requirementis not fixed and it can be changed in the future because list is mutable 

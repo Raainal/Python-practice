@@ -1,0 +1,50 @@
+digraph "Emotion Detection Process" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Emotion Detection Process" nodesep=0.60 pad=2.0 rankdir=TB ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	c63d423774e946bd889f1ab653fc2889 [label=Start]
+	"3687bb28f7ea4f5882b20844f9923a95" [label="Load pre-trained model
+for emotion detection"]
+	a42cdf285a7d4470991446d34b9c9f11 [label="Load Haar cascade
+classifier for face detection"]
+	"878032df63f14623ad2827aee82dfd8d" [label="Create main
+application window"]
+	"3a74364cd6364cb1840c494d22ea3189" [label="Load and display
+background image"]
+	ebaff3efac3042e9bfd2e9b27742ad94 [label="Ensure camera
+is opened"]
+	c2dd7aea6bfc436d80b9f43717cc3eb7 [label="Capture frame
+from camera"]
+	ea0f83423c24465982e0cd3cd28104bf [label="Convert frame
+to grayscale"]
+	"0fe720e9bafa40c59dc45410409dba3d" [label="Detect faces
+using Haar cascade"]
+	e2956e929e4b4c1499b9a4d7db309bb2 [label="Draw rectangles
+around faces"]
+	"7daef75d84284ac1a05e3ab4f8c4ad5f" [label="Convert frame
+to RGB"]
+	"1734379f1d0c4050b744cde3bfce0c3f" [label="Display updated
+frame on label"]
+	cc466a9b05634c168c7bedfd4da86c0e [label="Detect emotions
+(Button Press)"]
+	"1153107a1b9442bfab63f9d1621fbb8a" [label="Predict emotion
+using model"]
+	ef7349eb955a46d3a55039edbe1e141b [label="Display emotion
+label"]
+	fad4cf1000ca4977a8053b49eb3b6264 [label=End]
+	c63d423774e946bd889f1ab653fc2889 -> "3687bb28f7ea4f5882b20844f9923a95" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"3687bb28f7ea4f5882b20844f9923a95" -> a42cdf285a7d4470991446d34b9c9f11 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	a42cdf285a7d4470991446d34b9c9f11 -> "878032df63f14623ad2827aee82dfd8d" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"878032df63f14623ad2827aee82dfd8d" -> "3a74364cd6364cb1840c494d22ea3189" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"3a74364cd6364cb1840c494d22ea3189" -> ebaff3efac3042e9bfd2e9b27742ad94 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	ebaff3efac3042e9bfd2e9b27742ad94 -> c2dd7aea6bfc436d80b9f43717cc3eb7 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c2dd7aea6bfc436d80b9f43717cc3eb7 -> ea0f83423c24465982e0cd3cd28104bf [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	ea0f83423c24465982e0cd3cd28104bf -> "0fe720e9bafa40c59dc45410409dba3d" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"0fe720e9bafa40c59dc45410409dba3d" -> e2956e929e4b4c1499b9a4d7db309bb2 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	e2956e929e4b4c1499b9a4d7db309bb2 -> "7daef75d84284ac1a05e3ab4f8c4ad5f" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"7daef75d84284ac1a05e3ab4f8c4ad5f" -> "1734379f1d0c4050b744cde3bfce0c3f" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"1734379f1d0c4050b744cde3bfce0c3f" -> cc466a9b05634c168c7bedfd4da86c0e [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cc466a9b05634c168c7bedfd4da86c0e -> "1153107a1b9442bfab63f9d1621fbb8a" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"1153107a1b9442bfab63f9d1621fbb8a" -> ef7349eb955a46d3a55039edbe1e141b [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	ef7349eb955a46d3a55039edbe1e141b -> fad4cf1000ca4977a8053b49eb3b6264 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+}
