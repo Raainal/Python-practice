@@ -43,6 +43,6 @@ def func(name):
 name_of=["amal","dharshu","shib","bitch"]
 #print(func(name_of))
 
-def name(*name):
+#def name(*name):
     #print(name)
 #name("ashish","prashant","tushar",1001)
