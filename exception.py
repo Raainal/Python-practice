@@ -11,4 +11,6 @@ try:
 #     print("error val",message)
 except (ZeroDivisionError,ValueError) as message:
     print("error",message)
+except:
+    print("error")
 print("continue")
