@@ -14,4 +14,7 @@ obj=sbi()
 obj.homeloan_ROI()
 obj.carloan_ROI()
 # Output: Home loan rate of interest is 7%
+# Home loan rate of interest is 7.5%
+# Car loan rate of interest is 8%
+
     
