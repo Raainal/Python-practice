@@ -19,14 +19,29 @@ class LinkedList:
             self.tail=node
 
     def add_node_beginning(self,value):
-        
+        node=Node(value)
+        if self.head==None:
+            self.head=node
+            self.tail=node
+        else:
+            node.next=self.head
+            self.head=node
+
+    def addNodeEnd(self,value):
+        node=Node(value)
+        if self.head is None:
+            self.head = node
+            self.tail=node
+        else:
+            self.tail.next=node
+            self.tail=node
 
     def display(self):
         while self.head is not None:
             print(self.head.data,end='->')
             self.head=self.head.next
 
-if name=='main':
+if __name__=='__main__':
     object=LinkedList()
     while True:
         print("1.Add node linkedlist")
